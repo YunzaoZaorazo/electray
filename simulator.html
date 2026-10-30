@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulator | ElecTray</title>
+<link rel="stylesheet" href="styling-main.css">
+</head>
+<body>
+<!-- navbar section -->
+<nav id="navbar"></nav>
+
+<main>
+<!-- simulator section -->
+<div class="wrap">
+  <div class="page-head">
+    <h1>Simulator</h1>
+    <p>Choose the colors on your resistor or the code on your capacitor to find its value.</p>
+  </div>
+
+  <div class="tabs">
+    <button class="on" data-panel="resistor-panel">Resistor</button>
+    <button data-panel="capacitor-panel">Capacitor</button>
+  </div>
+
+  <!-- resistor panel -->
+  <div class="panel" id="resistor-panel">
+    <div class="resistor" style="margin:12px 0 12px"><div class="res-body" id="res-body"></div></div>
+    <div id="res-picker"></div>
+    <div class="result" id="res-result"></div>
+    <div class="sub-result" id="res-sub"></div>
+  </div>
+
+  <!-- capacitor panel -->
+  <div class="panel" id="capacitor-panel" hidden>
+    <div class="tabs">
+      <button class="on" data-panel="cap-search">Search by code</button>
+      <button data-panel="cap-pick">Pick a capacity</button>
+    </div>
+    <div id="cap-search">
+      <div class="controls">
+        <label>Code printed on the capacitor
+          <input id="cap-code" placeholder="e.g. 104" maxlength="3" inputmode="numeric">
+        </label>
+        <label>Tolerance letter
+          <select id="cap-tol"></select>
+        </label>
+      </div>
+      <div class="result" id="cap-result"></div>
+      <div class="sub-result" id="cap-sub"></div>
+    </div>
+    <div id="cap-pick" hidden>
+      <div class="controls">
+        <label>Capacitance
+          <select id="pick-value"></select>
+        </label>
+        <label>Tolerance letter
+          <select id="pick-tol"></select>
+        </label>
+      </div>
+      <div class="result" id="pick-result"></div>
+      <div class="sub-result" id="pick-sub"></div>
+    </div>
+  </div>
+</div>
+</main>
+
+<!-- footer section -->
+<footer id="footer"></footer>
+<script src="functing-layout.js"></script>
+<script src="functing-resistor.js"></script>
+<script src="functing-simulator.js"></script>
+</body>
+</html>
